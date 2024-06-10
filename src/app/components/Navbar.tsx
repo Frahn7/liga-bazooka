@@ -5,6 +5,7 @@ import { GoHome } from "react-icons/go";
 import { GiMicrophone } from "react-icons/gi";
 import { MdOutlinePhotoLibrary } from "react-icons/md";
 import { IconContext } from "react-icons";
+import { MdEvent } from "react-icons/md";
 
 export const Navbar = () => {
   const router = useRouter();
@@ -40,6 +41,16 @@ export const Navbar = () => {
             value={{ color: "black", className: "contactIcon" }}
           >
             <MdOutlinePhotoLibrary />
+          </IconContext.Provider>
+        </li>
+        <li
+          onClick={() => router.push("/events")}
+          className="cursor-pointer flex justify-center"
+        >
+          <IconContext.Provider
+            value={{ color: "black", className: "contactIcon" }}
+          >
+            <MdEvent />
           </IconContext.Provider>
         </li>
       </ul>

@@ -10,7 +10,7 @@ interface CardsRapersProps {
 export const CardRapers = ({ name, image, country }: CardsRapersProps) => {
   return (
     <div>
-      <div className="w-[250px] border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-600 ">
+      <div className="w-[250px] border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-600 h-[370px] ">
         <div className="flex justify-center mt-3">
           <Image
             width={200}
