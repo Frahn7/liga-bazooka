@@ -39,7 +39,7 @@ export default function Rapers() {
         <Navbar />
       </div>
 
-      <div className="w-[100%] max-h-[300px] mt-5 flex-wrap flex flex-row gap-5 justify-center">
+      <div className="w-[100%] max-h-[300px] flex-wrap flex flex-row gap-5 justify-center">
         {loading ? (
           <Spinner />
         ) : (
@@ -52,18 +52,6 @@ export default function Rapers() {
             />
           ))
         )}
-      </div>
-      <div className="flex flex-row gap-5 p-5 text-[30px]">
-        <p className="hover:text-[#507a31]  h-[30px] cursor-pointer">
-          <a href="https://www.youtube.com/@DtokeFree/videos" target="_blank">
-            <GrChannel />
-          </a>
-        </p>
-        <p className="hover:text-[#507a31] h-[30px] cursor-pointer">
-          <a href="https://x.com/ligabazooka" target="_blank">
-            <FaXTwitter />
-          </a>
-        </p>
       </div>
     </div>
   );

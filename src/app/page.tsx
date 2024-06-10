@@ -3,9 +3,11 @@ import { Navbar } from "./components/Navbar";
 
 export default function Home() {
   return (
-    <div className="bgmicrofono">
-      <Navbar />
-      <div className="min-h-screen">
+    <div className="bgmicrofono min-h-screen flex flex-row">
+      <div className="w-[10%]">
+        <Navbar />
+      </div>
+      <div className="w-[100%]">
         <div className="flex items-center flex-col">
           <Image src="/logo-bazooka.png" alt="." width={150} height={150} />
           <h2 className="mt-10 text-[25px] font-bold">Historia</h2>

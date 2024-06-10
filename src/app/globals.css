@@ -9,11 +9,11 @@ body {
 
 .bgmicrofono {
   background-image: url("../../public/microfono-bg.webp");
-  background-size: fixed;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: contrast(1.2) brightness(0.9);
   background-attachment: fixed;
+  min-height: 100vh;
 }
 
 .contactIcon:hover {
