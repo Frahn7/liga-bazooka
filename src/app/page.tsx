@@ -1,13 +1,28 @@
+"use client";
+
 import Image from "next/image";
 import { Navbar } from "./components/Navbar";
+import { useGetScreenProperties } from "./hooks/useGetScreenProperties";
+import { Hamburger } from "./components/Hamburger";
 
 export default function Home() {
+  const { screen } = useGetScreenProperties();
+
+  const className =
+    screen.width <= 768
+      ? "min-h-screen flex md:flex-row items-center"
+      : "bgmicrofono min-h-screen flex md:flex-row";
+
   return (
-    <div className="bgmicrofono min-h-screen flex flex-row">
-      <div className="w-[10%]">
-        <Navbar />
-      </div>
-      <div className="w-[100%]">
+    <div className={className}>
+      {screen.width <= 768 ? (
+        <Hamburger />
+      ) : (
+        <div className="md:w-[10%]">
+          <Navbar render="home" />
+        </div>
+      )}
+      <div className="md:w-[100%]">
         <div className="flex items-center flex-col">
           <Image src="/logo-bazooka.png" alt="." width={150} height={150} />
           <h2 className="mt-10 text-[25px] font-bold">Historia</h2>

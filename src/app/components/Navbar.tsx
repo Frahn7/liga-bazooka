@@ -8,9 +8,12 @@ import { IconContext } from "react-icons";
 import { MdEvent } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
-import Image from "next/image";
 
-export const Navbar = () => {
+interface NavbarProps {
+  render: "home" | "rapers" | "photos" | "events";
+}
+
+export const Navbar = ({ render }: NavbarProps) => {
   const router = useRouter();
 
   return (
@@ -21,41 +24,65 @@ export const Navbar = () => {
           onClick={() => router.push("/")}
           className="cursor-pointer flex justify-center"
         >
-          <IconContext.Provider
-            value={{ color: "black", className: "contactIcon" }}
-          >
-            <GoHome />
-          </IconContext.Provider>
+          {render === "home" ? (
+            <IconContext.Provider value={{ color: "white" }}>
+              <GoHome />
+            </IconContext.Provider>
+          ) : (
+            <IconContext.Provider
+              value={{ color: "black", className: "contactIcon" }}
+            >
+              <GoHome />
+            </IconContext.Provider>
+          )}
         </li>
         <li
           onClick={() => router.push("/rapers")}
           className="cursor-pointer flex justify-center"
         >
-          <IconContext.Provider
-            value={{ color: "black", className: "contactIcon" }}
-          >
-            <GiMicrophone />
-          </IconContext.Provider>
+          {render === "rapers" ? (
+            <IconContext.Provider value={{ color: "white" }}>
+              <GiMicrophone />
+            </IconContext.Provider>
+          ) : (
+            <IconContext.Provider
+              value={{ color: "black", className: "contactIcon" }}
+            >
+              <GiMicrophone />
+            </IconContext.Provider>
+          )}
         </li>
         <li
           onClick={() => router.push("/photos")}
           className="cursor-pointer flex justify-center"
         >
-          <IconContext.Provider
-            value={{ color: "black", className: "contactIcon" }}
-          >
-            <MdOutlinePhotoLibrary />
-          </IconContext.Provider>
+          {render === "photos" ? (
+            <IconContext.Provider value={{ color: "white" }}>
+              <MdOutlinePhotoLibrary />
+            </IconContext.Provider>
+          ) : (
+            <IconContext.Provider
+              value={{ color: "black", className: "contactIcon" }}
+            >
+              <MdOutlinePhotoLibrary />
+            </IconContext.Provider>
+          )}
         </li>
         <li
           onClick={() => router.push("/events")}
           className="cursor-pointer flex justify-center"
         >
-          <IconContext.Provider
-            value={{ color: "black", className: "contactIcon" }}
-          >
-            <MdEvent />
-          </IconContext.Provider>
+          {render === "events" ? (
+            <IconContext.Provider value={{ color: "white" }}>
+              <MdEvent />
+            </IconContext.Provider>
+          ) : (
+            <IconContext.Provider
+              value={{ color: "black", className: "contactIcon" }}
+            >
+              <MdEvent />
+            </IconContext.Provider>
+          )}
         </li>
       </ul>
       <ul className="flex flex-row justify-center gap-3 text-white text-[25px]">

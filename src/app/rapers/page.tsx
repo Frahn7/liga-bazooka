@@ -5,6 +5,8 @@ import { Navbar } from "../components/Navbar";
 import { GrChannel } from "react-icons/gr";
 import { FaXTwitter } from "react-icons/fa6";
 import useGetRapers from "../hooks/useGetRapers";
+import { useGetScreenProperties } from "../hooks/useGetScreenProperties";
+import { Hamburger } from "../components/Hamburger";
 
 const Spinner = () => {
   return (
@@ -32,12 +34,17 @@ const Spinner = () => {
 
 export default function Rapers() {
   const { loading, rapers } = useGetRapers();
+  const { screen } = useGetScreenProperties();
 
   return (
     <div className="min-h-screen flex flex-row">
-      <div className="w-[10%]">
-        <Navbar />
-      </div>
+      {screen.width <= 768 ? (
+        <Hamburger />
+      ) : (
+        <div className="w-[10%]">
+          <Navbar render="rapers" />
+        </div>
+      )}
 
       <div className="w-[100%] max-h-[300px] flex-wrap flex flex-row gap-5 justify-center">
         {loading ? (
